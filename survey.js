@@ -1,26 +1,22 @@
 const readline = require('readline');
-
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
-
-rl.question('What do you think of Node.js? ', (answer) => {
-  console.log(`Thank you for your valuable feedback: ${answer}`);
-  rl.question('What\'s your name? Nicknames are also acceptable :)', (answer) => {
-    console.log(`Thank you for your name. ${answer}`);
-  rl.question('What\'s an activity you like doing? ', (answer) => {
-    console.log(`Thank you for submitting your activity. ${answer}`);
-  rl.question('What do you listen to while doing that?', (answer) => {
-    console.log(`Thank you for submitting your song. ${answer}`);
-  rl.question('Which meal is your favourite (eg: dinner, brunch, etc.) ', (answer) => {
-    console.log(`Thank you for submitting your favourite meal. ${answer}`);
-  rl.question('What\'s your favourite thing to eat for that meal?  ', (answer) => {
-    console.log(`Thank you for submitting your favorite food. ${answer}`);
-  rl.question('Which sport is your absolute favourite?  ', (answer) => {
-    console.log(`Thank you for submitting your favorite sport. ${answer}`);
-  rl.question('What is your superpower? In a few words, tell us what you are amazing at!', (answer) => {
-    console.log(`Thank you for submitting your super power. ${answer}`);
-
+rl.question("What's your name? Nicknames are also acceptable :", (name) => {
+  rl.question("What's an activity you like doing? ", (activity) => {  
+    rl.question("What do you listen to while doing that?", (listens) => {  
+      rl.question("Which meal is your favourite (eg: dinner, brunch, etc.)", (meal) => {  
+        rl.question("What's your favourite thing to eat for that meal?", (food) => {  
+          rl.question("Which sport is your absolute favourite?", (sport) => {  
+            rl.question("What is your superpower? In a few words, tell us what you are amazing at!", (superpower) => {  
+    console.log(`${name} loves listening to ${listens} while ${activity}, eating ${food} for ${meal}, enjoys playing ${sport} and wishes they could ${superpower}`);
+    
   rl.close();
+            })
+          })
+        })
+      })
+    })
+  })
 });
